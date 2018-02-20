@@ -1,0 +1,5 @@
+### Node 1
+```
+> admin.nodeInfo.enode
+"enode://729df06eff42e27a13219cee518b7a21a0ae33a6ff0035fbf9356d30ea7dbdf56902c817983d4b9225c104b28b9fce5a21231ea6ff04e6e20e41e0b5b60e33e1@192.168.1.101:30303"
+```
