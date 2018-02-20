@@ -1,0 +1,13 @@
+{
+    "alloc" : {},
+    "coinbase" : "0x000000000000000000",
+    "dificulty" : "0x4000",
+    "extradata" : "",
+    "gasLimit" : "0x800000000000000000",
+    "config" : {
+        "chainId" : 987,
+        "homesteadBlock" : 0,
+        "epi155Block" : 0,
+        "epi158Block" : 0      
+    }
+}
