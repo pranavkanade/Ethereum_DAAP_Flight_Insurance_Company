@@ -2,8 +2,9 @@
 
 * Commands:
 1. geth --datadir=~/semicolons/data2/ init ~/semicolons/test_accounts/genesis.json
-2. geth attach /path_to_your_data_directory/YOUR_FOLDER/geth.ipc
-3. geth --datadir ./data2/ --networkid 961995 --rpcport 8546 --rpc --rpcapi eth,web3,personal,net --rpcaddr 0.0.0.0 console --port 30302
+2. geth --datadir ./data2/ --networkid 961995 --rpcport 8546 --rpc --rpcapi eth,web3,personal,net --rpcaddr 0.0.0.0 console --port 30302
+3. geth attach /path_to_your_data_directory/YOUR_FOLDER/geth.ipc
+
 
 ### Node 1
 ```
