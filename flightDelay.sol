@@ -52,15 +52,15 @@ contract FlightInsurance is owned, tokenRecipient {
     event BecameCustomer(address customerAddress, bool isCustomer);
 
     struct Customer {
-        string name;
-        address customer;
+        string customerName;
+        address customerAddress;
     }
     
     struct PolicyData {
         FlightData flightData;
         uint startDate;
         uint endDate;
-        uint mimPayOut;
+        uint minPayOut;
         uint premiumAmount;
         bool claimed;
         bool confirmed;
@@ -73,7 +73,7 @@ contract FlightInsurance is owned, tokenRecipient {
     }
 
     function FlightInsurance() payable public {
-        // add 0th initial customer;
+        // add 0th (initial) customer;
         addCustomer(0, "");
     }
 
@@ -85,15 +85,61 @@ contract FlightInsurance is owned, tokenRecipient {
             id = policyHolders.length++;
         }
 
-        policyHolders[id] = Customer({name: customerName, customer: customerAddress});
+        policyHolders[id] = Customer({customerName: customerName, customerAddress: customerAddress});
         BecameCustomer(customerAddress, true);
     }
 
-    // Setting for flight delay 
-    function FlightDelayInsurance() payable {
-        // Set initial parameters
+    // add a function to give the entry point to insure the customer.
+    function insure(
+        Customer customerInsuring,
+        uint policyKey,
+        uint premiumAmount,
+        FlightData fdata           // this will hold the temp information on the flight for which the insurance is taken
+    ) onlyOwner internal {
+        PolicyData storage insuredOnPolicy = defaultPolicyData(1);
+        insuredOnPolicy.flightData = fdata;
+
+        // Need to find the ID of for the policy being taken
+
     }
 
-    
+    // Function to set all the default data of the PolicyData struct
+    function defaultPolicyData(uint policyType) returns (PolicyData) {
+        PolicyData storage defaultPd;
+        
+        defaultPd.startDate = 0;
+        defaultPd.endDate = 20;
+        // this will be different for different types 
+        if (policyType == 1){
+            defaultPd.minPayOut = 4000;
+        }
+        else {
+            defaultPd.minPayOut = 2000;
+        }
+        defaultPd.premiumAmount = 1000;
+        defaultPd.claimed = false;
+        defaultPd.confirmed = false;
+        return defaultPd;
+    }
 
+    // Function for the public interface which any registerd user will be able to call from the blockchain
+    // assume that there is only one flight and user is putting all the correct date values.
+    function FlightDelayInsurance(string name, uint policyType) payable public {
+        // policyType could be various version of the same policy dith different payouts
+        uint policyKey = 123;
+        uint premiumAmountPaid = 1000;
+
+        // flight information
+        FlightData storage fd;
+        fd.flightNumber = "1"; 
+        fd.source = "";
+        fd.destination = "";
+        
+        // customer information
+        Customer storage cInsuring;
+        cInsuring.customerAddress = msg.sender;
+        cInsuring.customerName = name;
+
+        insure(cInsuring, policyKey, premiumAmountPaid, fd);
+    }
 }

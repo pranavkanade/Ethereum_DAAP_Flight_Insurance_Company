@@ -19,8 +19,19 @@
 
 ### Node 3
 ```
-"enode://96afea63b02faed6ac0df9d684baf0d7ff050531b72ee643cd23cbb36d0cac0a62520ccd6d86eeb42c93754130257abdede4f66c6b43dbab3ff05273c3122974@[::]:30302"
+"enode://96afea63b02faed6ac0df9d684baf0d7ff050531b72ee643cd23cbb36d0cac0a62520ccd6d86eeb42c93754130257abdede4f66c6b43dbab3ff05273c3122974@10.88.246.190:30302"
 ```
+
+## Testing Nodes: Date (32/02/2018)
+```
+"enode://96afea63b02faed6ac0df9d684baf0d7ff050531b72ee643cd23cbb36d0cac0a62520ccd6d86eeb42c93754130257abdede4f66c6b43dbab3ff05273c3122974@10.88.246.190:30301"
+```
+
+## miner
+```
+"enode://561ef3cfd33ce2b18d442bc443e321a9afa8b144cacd1c9057a98177fd9ec219eadab393551e9c4ed52f4e73aa38cccb89d824c9006eafd0f6c7efca97918fd4@10.88.246.190:30305"
+```
+
 
 **This Node3 and Node1 are on the same machine with the different terminal sessoins**
     * The point is we need to operate each node on different port, the default is : 30303 
