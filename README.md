@@ -1,5 +1,5 @@
-# Ethereum_Test_Files
-Testing files during semicolons
+# Ethereum_DAAP_Flight_Insurance_Company
+Source code files built during Semicolon hackathon.
 
 
 ## Commands to start a blockchain node
